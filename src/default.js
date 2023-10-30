@@ -8,5 +8,8 @@ export default function buildDefault() {
     })
     massAppend(content,header,main,footer)
     massAppend(header,logo,navbar)
-
+    footer.innerHTML = "dlbrptrvc&copy"+new Date().getFullYear()
+    menubtn.textContent = 'Menu'
+    homebtn.textContent = 'Home'
+    contactsbtn.textContent = 'Contacts'
 }
