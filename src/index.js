@@ -1,1 +1,4 @@
-console.log('working on it')
+import './style.css';
+import buildDefault from './default'
+
+buildDefault()
