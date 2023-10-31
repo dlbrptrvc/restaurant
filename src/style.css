@@ -4,6 +4,17 @@
     padding: 0;
 }
 
+:root {
+    --color-one : papayawhip;
+    --color-two : salmon;
+    --shadow-one : 0px 1px 1px rgba(3, 7, 18, 0.02),
+    0px 4px 4px rgba(3, 7, 18, 0.03),
+    0px 9px 9px rgba(3, 7, 18, 0.05),
+    0px 16px 15px rgba(3, 7, 18, 0.06),
+    0px 25px 24px rgba(3, 7, 18, 0.08);
+
+}
+
 #content {
     display:flex;
     flex-direction: column;
@@ -17,25 +28,23 @@
     position: fixed;
     top:0;
     left:0;
-    height:60px;
+    min-height:60px;
+    display: flex;
+    flex-wrap: wrap;
     width: 100vw;
-    background-color: papayawhip;
+    background-color: var(--color-two);
+    color: white;
     display: flex;
     justify-content: space-around;
- /* https://smoothshadows.com/#djEsMSw1LDAuMDgsMjQsMjUsMCwjMDMwNzEyLCNmM2Y0ZjYsI2ZmZmZmZiwx */
-    box-shadow: 0px 1px 1px rgba(3, 7, 18, 0.02),
-      0px 4px 4px rgba(3, 7, 18, 0.03),
-      0px 9px 9px rgba(3, 7, 18, 0.05),
-      0px 16px 15px rgba(3, 7, 18, 0.06),
-      0px 25px 24px rgba(3, 7, 18, 0.08);
-    ;
-
+    box-shadow: var(--shadow-one);
 }
 
 #logo {
+    min-height: 60px;
     background-image: url(./images/logo.png);
     background-size: contain;
     width: 330px;
+    flex-shrink: 0;
 }
 
 #navbar {
@@ -44,6 +53,7 @@
 }
 
 .navbtn {
+    min-height: 50px;
     width:100px;
     margin: 5px 5px 5px 5px;
     border-radius: 30px;
@@ -56,15 +66,103 @@
 }
 
 .navbtn:hover {
-    background-color: salmon;
-    color: white;
+    background-color: var(--color-one);
+    color: black;
+}
+
+.selected {
+    background-color: var(--color-one);
+    color: black; 
 }
 
 #footer {
-    position: fixed;
-    bottom: 0;
-    height:25px;
-    width:100vw;
     text-align: right;
-    margin: -5px -5px -5px -5px;
+    padding: 5px 5px 5px 5px;
+}
+
+/* container style */
+
+#main {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    align-items: center;
+    justify-content: center;
+    margin: 100px 0 0 0;
+    /* overflow: hidden; */
+    margin-bottom: auto;
+}
+
+[id^='container'] {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+[id^='spancontainer'] {
+    /* width:500px; */
+    flex: 0 1 500px;
+}
+
+[id^='maincontainer'] {
+    flex: 0 1;
+    display:flex;
+    flex-direction: column;
+}
+
+[id^='placeholderemb'] {
+    display:flex;
+    align-items: center;
+}
+
+[id^='embellishment1'],
+[id^='embellishment3'] {
+    width:40px;
+    height:40px;
+    border-radius: 20px;
+    border: 2px solid white;
+    background-color: var(--color-two);
+    box-shadow: var(--shadow-one);
+}
+
+[id^='embellishment2'] {
+    width:50px;
+    height:50px;
+    border-radius: 25px;
+    border: 2px solid white;
+    background-color: var(--color-two);
+    box-shadow: var(--shadow-one);
+}
+
+[id^='bordercontainer'] {
+    border: 2px solid white;
+    background-color: var(--color-two);
+    box-shadow: var(--shadow-one);
+    border-radius: 25px;
+    display: flex;
+}
+
+[id^='innercontainer'] {
+    background-color: var(--color-one);
+    margin: 25px 25px 25px 25px;
+    padding:25px 25px 25px 25px;
+    border-radius: 20px;
+    display: flex;
+}
+
+[id^='image'] {
+    flex-shrink: 0;
+}
+
+[id^='description'] {
+    width: 400px;
+    gap:25px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 50px 50px 50px 50px;
+}
+
+[id^='title'] {
+    font-size: 50px;
 }

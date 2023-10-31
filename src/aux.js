@@ -13,3 +13,18 @@ export function massAppend() {
         arguments[0].append(arguments[i])
     }
 }
+
+export function massAppendString() {
+    if (!window[arguments[0]]) {
+        console.log('building',arguments[0])
+        massBuild(arguments[0])
+    }
+
+    for(let i=1;i<arguments.length;i++) {
+        if (!window[arguments[i]]) {
+            console.log('building', arguments[i])
+            massBuild(arguments[i])
+        }
+        window[arguments[0]].append(window[arguments[i]])
+    }    
+}

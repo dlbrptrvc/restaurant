@@ -1,8 +1,8 @@
-import {massBuild,massAppend} from "./aux"
+import {massBuild,massAppend,massAppendString} from "./aux"
 
-export default function buildDefault() {
+export function buildDefault() {
     massBuild('header','logo','navbar','main','footer')
-    massBuild('homebtn','menubtn','contactsbtn').forEach(elem => {
+    massBuild('homebtn','menubtn','orderbtn').forEach(elem => {
         navbar.append(elem)
         elem.className = 'navbtn'
     })
@@ -11,5 +11,29 @@ export default function buildDefault() {
     footer.innerHTML = "dlbrptrvc&copy"+new Date().getFullYear()
     menubtn.textContent = 'Menu'
     homebtn.textContent = 'Home'
-    contactsbtn.textContent = 'Contacts'
+    orderbtn.textContent = 'Order'
+}
+
+export function buildContainers(n) {
+    for(let i=0;i<n;i++) {
+        if (i%2==0) {
+            massAppendString('container'+i,'maincontainer'+i,'spancontainer'+i)
+            massAppendString('innercontainer'+i,'image'+i,'description'+i)
+        } else {
+            massAppendString('container'+i,'spancontainer'+i,'maincontainer'+i)
+            massAppendString('innercontainer'+i,'description'+i,'image'+i)
+        }
+        massAppendString('main','container'+i)
+        massAppendString('placeholderemb'+i,'embellishment1'+i,'embellishment2'+i,'embellishment3'+i)
+        massAppendString('maincontainer'+i,'placeholderemb'+i,'bordercontainer'+i)
+        massAppendString('bordercontainer'+i,'innercontainer'+i)
+
+        massAppendString('description'+i,'title'+i,'text'+i,'placeholderord'+i)
+        massAppendString('placeholderord'+i,'plusbtn'+i,'amount'+i,'minusbtn'+i)
+// tweeks
+        if (i%2!==0) {
+            window['placeholderemb'+i].style.justifyContent = 'end'
+        }
+    }
+
 }

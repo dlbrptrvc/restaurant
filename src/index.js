@@ -1,4 +1,6 @@
 import './style.css';
-import buildDefault from './default'
+import { buildHome } from './home';
+import { buildDefault } from './default'
 
 buildDefault()
+buildHome()
