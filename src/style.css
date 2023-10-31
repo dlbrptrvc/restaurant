@@ -15,11 +15,14 @@
 
 }
 
+body {
+    background-image: url('images/lemons.jpg');
+}
+
 #content {
     display:flex;
     flex-direction: column;
-    background-image: url('images/lemons.jpg');
-    width: 100vw;
+    width: auto;
     height: 100vh;
 
 }
@@ -31,12 +34,13 @@
     min-height:60px;
     display: flex;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 100%;
     background-color: var(--color-two);
     color: white;
     display: flex;
     justify-content: space-around;
     box-shadow: var(--shadow-one);
+    z-index: 2;
 }
 
 #logo {
@@ -78,6 +82,7 @@
 #footer {
     text-align: right;
     padding: 5px 5px 5px 5px;
+    margin-top: auto;
 }
 
 /* container style */
@@ -88,26 +93,41 @@
     gap:5px;
     align-items: center;
     justify-content: center;
-    margin: 100px 0 0 0;
-    /* overflow: hidden; */
-    margin-bottom: auto;
+    margin: 150px 0 0 0;
+    transition: 1s;
 }
 
 [id^='container'] {
     display:flex;
     flex-wrap: wrap;
-    justify-content: space-around;
 }
 
-[id^='spancontainer'] {
-    /* width:500px; */
-    flex: 0 1 500px;
+[id^='innercontainer'] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-[id^='maincontainer'] {
-    flex: 0 1;
-    display:flex;
+[id^='description'] {
+    padding: 25px 25px 25px 25px;
+    max-width: 400px;
+    display: flex;
     flex-direction: column;
+}
+
+[id^='bordercontainer'] {
+    position: relative;
+    border:2px solid white;
+    background-color: var(--color-two);
+    border-radius: 25px;
+    padding: 25px;
+    box-shadow: var(--shadow-one);
+}
+
+[id^='innercontainer'] {
+    background-color: var(--color-one);
+    border-radius: 15px;
+    padding: 15px 15px 15px 15px;
 }
 
 [id^='placeholderemb'] {
@@ -117,8 +137,8 @@
 
 [id^='embellishment1'],
 [id^='embellishment3'] {
-    width:40px;
-    height:40px;
+    min-width:40px;
+    min-height:40px;
     border-radius: 20px;
     border: 2px solid white;
     background-color: var(--color-two);
@@ -134,35 +154,12 @@
     box-shadow: var(--shadow-one);
 }
 
-[id^='bordercontainer'] {
-    border: 2px solid white;
-    background-color: var(--color-two);
-    box-shadow: var(--shadow-one);
-    border-radius: 25px;
-    display: flex;
-}
-
-[id^='innercontainer'] {
-    background-color: var(--color-one);
-    margin: 25px 25px 25px 25px;
-    padding:25px 25px 25px 25px;
-    border-radius: 20px;
-    display: flex;
-}
-
-[id^='image'] {
-    flex-shrink: 0;
-}
-
-[id^='description'] {
-    width: 400px;
-    gap:25px;
-    display:flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 50px 50px 50px 50px;
+[id^='spancontainer'] {
+    min-width: 300px;
 }
 
 [id^='title'] {
-    font-size: 50px;
+    align-self: flex-start;
+    font-size: 35px;
+    padding:20px 0 20px 0;
 }
