@@ -12,6 +12,9 @@ export function buildDefault() {
     menubtn.textContent = 'Menu'
     homebtn.textContent = 'Home'
     orderbtn.textContent = 'Order'
+    // build purchase reminder
+    massAppendString('orderbtn','reminder')
+    reminder.style.visibility = 'hidden'
 }
 
 export function buildContainers(n) {

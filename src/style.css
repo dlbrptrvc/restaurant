@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url('./fonts/PlayfairDisplay-Regular.ttf');
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,6 +19,13 @@
     0px 25px 24px rgba(3, 7, 18, 0.08);
 
 }
+
+@media only screen and (max-width: 600px) {
+    #main
+    {
+      width: 100%;
+    }
+  }
 
 body {
     background-image: url('images/lemons.jpg');
@@ -67,6 +79,7 @@ body {
     border: 2px solid white;
     transition: 0.5s;
     user-select: none;
+    font-family: MyFont;
 }
 
 .navbtn:hover {
@@ -113,6 +126,7 @@ body {
     max-width: 400px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 [id^='bordercontainer'] {
@@ -159,7 +173,109 @@ body {
 }
 
 [id^='title'] {
+    font-family: MyFont;
+    font-weight: bold;
     align-self: flex-start;
     font-size: 35px;
     padding:20px 0 20px 0;
+}
+
+[id^='text'] {
+    font-family: MyFont;
+    font-size: 20px;
+}
+
+/* menu items */
+
+[id^='image'] {
+    width:300px;
+    height: 300px;
+    background-size: cover;
+}
+
+#image2 {
+    background-image: url('./images/apple-1327446.jpg');
+}
+
+#image3 {
+    background-image: url('./images/pear-shot-1322885.jpg');
+}
+
+#image4 {
+    background-image: url('./images/mandarin-1328623.jpg');
+}
+
+#image5 {
+    background-image: url('./images/grapes-1-1326864.jpg');
+}
+
+#image6 {
+    background-image: url('./images/healthy-fruit-melon-1632400.jpg');
+}
+
+#image7 {
+    background-image: url('./images/isolated-lemon-1-1324778.jpg');
+}
+
+[id^='placeholderord'] {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:5px;
+}
+
+[id^='plusbtn'],
+[id^='minusbtn'] {
+    width:35px;
+    height:35px;
+    border-radius: 20px;
+    border:2 px solid white;
+    color: white;
+    background-color: var(--color-two);
+    font-family: MyFont;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+[id^='plusbtn']:hover,
+[id^='minusbtn']:hover {
+    background-color: var(--color-one);
+    color: black;
+}
+
+[id^='amount'] {
+    min-width: 30px;
+    width:fit-content;
+    height:40px;
+    font-family: MyFont;
+    font-size: 20px;
+    background-color: white;
+    border: 2px solid var(--color-two);
+    color:black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* purchase reminder */
+
+#orderbtn {
+    position:relative;
+}
+#reminder {
+    position:absolute;
+    bottom: -5px;
+    right: -15px;
+    width:40px;
+    height:40px;
+    border: 2px solid white;
+    background-image: url('./images/shopping-cart\(1\).png');
+    background-size: cover;
+    background-color: var(--color-two);
+    border-radius: 20px;
 }
