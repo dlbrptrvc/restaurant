@@ -80,6 +80,8 @@ body {
     transition: 0.5s;
     user-select: none;
     font-family: MyFont;
+    background-color: var(--color-two);
+    color: white;
 }
 
 .navbtn:hover {
@@ -275,7 +277,21 @@ body {
     height:40px;
     border: 2px solid white;
     background-image: url('./images/shopping-cart\(1\).png');
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
     background-color: var(--color-two);
     border-radius: 20px;
+    padding: 5px 5px 5px 5px;
+    background-origin: content-box;
 }
+
+/* orderer tab */
+
+#image1 {
+    background-image: url('./images/fruit-1185279.jpg');
+    width:50vw;
+    min-width :300px;
+    height : 50vh;
+    min-height : 600px;
+}
+
